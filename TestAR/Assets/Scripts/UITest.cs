@@ -36,13 +36,13 @@ public class UITest : MonoBehaviour
         GroundPlaneHitReceived = (this.aux == Time.frameCount);
         if (GroundPlaneHitReceived )
         {
-            instructions.color = Color.green;
-            instructions.text = "Plane Found";
+            instructions.transform.parent.gameObject.SetActive(false);
         }
         else
         {
-            instructions.color = Color.red;
-            instructions.text = "Point device towards ground";
+            instructions.transform.parent.gameObject.SetActive(true);
+
+            instructions.text = "Apuntar a la mesa";
         }
         //Debug.Log(GroundPlaneHitReceived);
     }
